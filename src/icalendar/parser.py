@@ -452,6 +452,7 @@ class Contentline(str):
                     if char_value < 128 or char_value >= 192:
                         # This is not in the middle of a UTF-8 character, so we
                         # can fold here:
+                        slice = self[start:end]
                         break
                     else:
                         end -= 1
